@@ -4,10 +4,10 @@
   "description": "Shared config for my projects",
   "license": "MIT",
   "author": "Wannes Salomé <mail@wannessalome.nl>",
-  "type": "module",
   "exports": {
-    "./eslint": "./eslint/index.cjs",
-    "./eslint/*": "./eslint/*.cjs",
+    "./eslint": "./eslint/index.js",
+    "./eslint/react": "./eslint/react.js",
+    "./eslint/solid": "./eslint/solid.js",
     "./prettier": "./prettier/index.js"
   },
   "files": [

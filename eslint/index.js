@@ -1,21 +1,21 @@
 /** @type {import('eslint').Linter.Config} */
-const typescriptConfig = {
-  extends: ['./base.cjs'],
+const config = {
+  extends: ['./base.js'],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      extends: ['./typescript.cjs'],
+      extends: ['./typescript.js'],
     },
     {
       files: ['*.js', '*.jsx'],
-      extends: ['./javascript.cjs'],
+      extends: ['./javascript.js'],
     },
 
     {
       files: ['*.astro'],
-      extends: ['./astro.cjs'],
+      extends: ['./astro.js'],
     },
   ],
 };
 
-module.exports = typescriptConfig;
+module.exports = config;

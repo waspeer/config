@@ -1,0 +1,7 @@
+{
+  "include": ["eslint/**/*", "prettier/**/*"],
+  "compilerOptions": {
+    "checkJs": true,
+    "noEmit": true
+  }
+}
