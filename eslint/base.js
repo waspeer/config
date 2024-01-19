@@ -1,6 +1,10 @@
 /** @type {import('eslint').Linter.Config} */
 const baseConfig = {
   extends: ['eslint:recommended', 'prettier'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   plugins: ['import'],
   rules: {
     'import/first': 'error',
