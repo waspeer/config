@@ -6,10 +6,7 @@ const astroConfig = {
     parser: '@typescript-eslint/parser',
     extraFileExtensions: ['.astro'],
   },
-  env: {
-    node: true,
-    browser: true,
-  }
+  processor: 'astro/client-side-ts',
 };
 
 module.exports = astroConfig;
