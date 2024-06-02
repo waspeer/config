@@ -1,20 +1,22 @@
-/** @type {import('eslint').Linter.Config} */
-const solidConfig = {
-  overrides: [
-    {
-      files: ['*.tsx', '*.jsx'],
-      plugins: ['solid'],
-      extends: [
-        './typescript.js',
-        'plugin:solid/typescript',
-        'plugin:jsx-a11y/recommended',
-        'prettier',
-      ],
-      rules: {
-        'jsx-a11y/label-has-associated-control': 'off',
-      },
-    },
-  ],
-};
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import solid from 'eslint-plugin-solid';
+import ts from 'typescript-eslint';
 
-module.exports = solidConfig;
+export const solidConfig = ts.config({
+  files: ['**/*.tsx', '**/*.jsx'],
+  plugins: {
+    solid,
+    'jsx-a11y': jsxA11y,
+  },
+  languageOptions: {
+    sourceType: /** @type {import('eslint').Linter.FlatConfig['languageOptions']['sourceType']} */ (
+      solid.configs['flat/recommended'].languageOptions.sourceType
+    ),
+    parserOptions: solid.configs['flat/recommended'].languageOptions.parserOptions,
+  },
+  rules: {
+    ...solid.configs['flat/typescript'].rules,
+    ...jsxA11y.configs.recommended.rules,
+    'jsx-a11y/label-has-associated-control': 'off',
+  },
+});

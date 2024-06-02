@@ -1,5 +1,5 @@
 /** @type {import("prettier").Config} */
-const config = {
+export const config = {
   plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order', 'prettier-plugin-packagejson'],
   overrides: [
     {
@@ -16,5 +16,3 @@ const config = {
   singleQuote: true,
   trailingComma: 'all',
 };
-
-module.exports = config;

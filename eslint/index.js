@@ -1,21 +1,9 @@
-/** @type {import('eslint').Linter.Config} */
-const config = {
-  extends: ['./base.js'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      extends: ['./typescript.js'],
-    },
-    {
-      files: ['*.js', '*.jsx'],
-      extends: ['./javascript.js'],
-    },
+import { baseConfig } from './base.js';
+import { reactConfig } from './react.js';
+import { solidConfig } from './solid.js';
 
-    {
-      files: ['*.astro'],
-      extends: ['./astro.js'],
-    },
-  ],
+export const configs = {
+  base: baseConfig,
+  solid: solidConfig,
+  react: reactConfig,
 };
-
-module.exports = config;
