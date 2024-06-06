@@ -6,3 +6,5 @@ export const configs: {
   react: Linter.FlatConfig[];
   solidReact: (options: { solidDir: string; reactDir: string }) => Linter.FlatConfig[];
 };
+
+export function prefixFiles(configs: Linter.FlatConfig[], suffix: string): Linter.FlatConfig[];
