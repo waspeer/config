@@ -46,5 +46,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": ">=9.0.0"
+      }
+    }
   }
 }
