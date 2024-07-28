@@ -1,4 +1,4 @@
-import defaults from 'defaults';
+import { createMerger } from 'smob';
 
 /** @type {import("prettier").Config} */
 export const config = {
@@ -19,7 +19,12 @@ export const config = {
   trailingComma: 'all',
 };
 
+const merge = createMerger({
+  arrayDistinct: true,
+  clone: true,
+});
+
 /** @type {(partialConfig: import('type-fest').PartialDeep<import("prettier").Config>) => import("prettier").Config} */
 export function customConfig(partialConfig) {
-  return defaults(partialConfig, config);
+  return merge(partialConfig, config);
 }
