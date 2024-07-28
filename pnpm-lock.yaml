@@ -20,6 +20,9 @@ importers:
       astro-eslint-parser:
         specifier: ^1.0.2
         version: 1.0.2(typescript@5.4.5)
+      defaults:
+        specifier: ^3.0.0
+        version: 3.0.0
       eslint:
         specifier: ^9
         version: 9.4.0
@@ -69,6 +72,9 @@ importers:
       release-it:
         specifier: ^17.3.0
         version: 17.3.0(typescript@5.4.5)
+      type-fest:
+        specifier: ^4.23.0
+        version: 4.23.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -683,6 +689,10 @@ packages:
 
   defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
+
+  defaults@3.0.0:
+    resolution: {integrity: sha512-RsqXDEAALjfRTro+IFNKpcPCt0/Cy2FqHSIlnomiJp9YGadpQnrtbRpSgN2+np21qHcIKiva4fiOQGjS9/qR/A==}
+    engines: {node: '>=18'}
 
   defer-to-connect@2.0.1:
     resolution: {integrity: sha512-4tvttepXG1VaYGrRibk5EwJd1t4udunSOVMdLSAL6mId1ix438oPwPZMALY41FCijukO1L0twNcGsdzS7dHgDg==}
@@ -2277,6 +2287,10 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
+  type-fest@4.23.0:
+    resolution: {integrity: sha512-ZiBujro2ohr5+Z/hZWHESLz3g08BBdrdLMieYFULJO+tWc437sn8kQsWLJoZErY8alNhxre9K4p3GURAG11n+w==}
+    engines: {node: '>=16'}
+
   typed-array-buffer@1.0.0:
     resolution: {integrity: sha512-Y8KTSIglk9OZEr8zywiIHG/kmQ7KWyjseXs1CbSo8vC42w7hg2HgYTxSWwP0+is7bWDc1H+Fo026CpHFwm8tkw==}
     engines: {node: '>= 0.4'}
@@ -3119,6 +3133,8 @@ snapshots:
   defaults@1.0.4:
     dependencies:
       clone: 1.0.4
+
+  defaults@3.0.0: {}
 
   defer-to-connect@2.0.1: {}
 
@@ -5019,6 +5035,8 @@ snapshots:
   type-fest@1.4.0: {}
 
   type-fest@2.19.0: {}
+
+  type-fest@4.23.0: {}
 
   typed-array-buffer@1.0.0:
     dependencies:
