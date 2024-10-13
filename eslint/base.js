@@ -8,29 +8,31 @@ export const baseConfig = ts.config(
   js.configs.recommended,
 
   // Base config
-  importPlugin.flatConfigs.recommended,
   {
+    ignores: ['eslint.config.js'],
+    plugins: {
+      'import-x': importPlugin,
+    },
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
     rules: {
-      'import/first': 'error',
-      'import/newline-after-import': 'error',
-      'import/no-anonymous-default-export': 'error',
-      'import/no-useless-path-segments': 'error',
-      'import/order': ['error', { alphabetize: { order: 'asc', caseInsensitive: true } }],
+      'import-x/first': 'error',
+      'import-x/newline-after-import': 'error',
+      'import-x/no-anonymous-default-export': 'error',
+      'import-x/no-useless-path-segments': 'error',
+      'import-x/order': ['error', { alphabetize: { order: 'asc', caseInsensitive: true } }],
     },
   },
 
   // Javascript
   ...[
-    // ...
-  ].map((config) => ({ ...config, files: ['*.{js,jsx,mjs}'] })),
+    //
+  ].map((config) => ({ ...config, files: ['**/*.{js,jsx,mjs}'] })),
 
   // Typescript
   ...[
-    importPlugin.flatConfigs.typescript,
     ...ts.configs.recommended,
     ...ts.config({
       rules: {
