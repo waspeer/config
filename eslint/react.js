@@ -10,7 +10,6 @@ export const reactConfig = ts.config(prettier, {
   ...react.configs.recommended,
   plugins: {
     ...react.configs.recommended.plugins,
-    ...jsxA11y.flatConfigs.recommended.plugins,
     'react-hooks': fixupPluginRules(reactHooks),
   },
   rules: {
