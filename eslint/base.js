@@ -1,7 +1,6 @@
-import { fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
 import astro from 'eslint-plugin-astro';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import ts from 'typescript-eslint';
 
 export const baseConfig = ts.config(
@@ -9,13 +8,11 @@ export const baseConfig = ts.config(
   js.configs.recommended,
 
   // Base config
+  importPlugin.flatConfigs.recommended,
   {
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-    },
-    plugins: {
-      import: fixupPluginRules(importPlugin),
     },
     rules: {
       'import/first': 'error',
@@ -28,13 +25,12 @@ export const baseConfig = ts.config(
 
   // Javascript
   ...[
-    // TODO this does not work yet, wait for flat config support
-    // ...fixupConfigRules(compat.extends('plugin:import/errors')),
-    // ...fixupConfigRules(compat.extends('plugin:import/warnings')),
+    // ...
   ].map((config) => ({ ...config, files: ['*.{js,jsx,mjs}'] })),
 
   // Typescript
   ...[
+    importPlugin.flatConfigs.typescript,
     ...ts.configs.recommended,
     ...ts.config({
       rules: {

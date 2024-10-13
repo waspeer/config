@@ -8,7 +8,7 @@ export const solidConfig = ts.config({
     solid,
   },
   languageOptions: {
-    sourceType: /** @type {import('eslint').Linter.FlatConfig['languageOptions']['sourceType']} */ (
+    sourceType: /** @type {import('eslint').Linter.Config['languageOptions']['sourceType']} */ (
       solid.configs['flat/recommended'].languageOptions.sourceType
     ),
     parserOptions: solid.configs['flat/recommended'].languageOptions.parserOptions,

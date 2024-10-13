@@ -1,9 +1,9 @@
 import type { Linter } from 'eslint';
 
 export const configs: {
-  base: Linter.FlatConfig[];
-  solid: Linter.FlatConfig[];
-  react: Linter.FlatConfig[];
+  base: Linter.Config[];
+  solid: Linter.Config[];
+  react: Linter.Config[];
 };
 
-export function prefixFiles(configs: Linter.FlatConfig[], suffix: string): Linter.FlatConfig[];
+export function prefixFiles(configs: Linter.Config[], suffix: string): Linter.Config[];
