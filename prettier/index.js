@@ -1,8 +1,15 @@
+import { createRequire } from 'node:module';
 import { createMerger } from 'smob';
+
+const require = createRequire(import.meta.url);
 
 /** @type {import("prettier").Config} */
 export const config = {
-  plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order', 'prettier-plugin-packagejson'],
+  plugins: [
+    require.resolve('prettier-plugin-astro'),
+    require.resolve('prettier-plugin-css-order'),
+    require.resolve('prettier-plugin-packagejson'),
+  ],
   overrides: [
     {
       files: '*.astro',
