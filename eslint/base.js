@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import astro from 'eslint-plugin-astro';
 import importPlugin from 'eslint-plugin-import-x';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import ts from 'typescript-eslint';
 
 export const baseConfig = ts.config(
@@ -50,7 +51,12 @@ export const baseConfig = ts.config(
     files: ['**/*.{ts,tsx,mts,cts,astro}'],
   })),
 
+  // JSX
+  {
+    ...jsxA11y.flatConfigs.recommended,
+    files: ['**/*.{jsx,tsx,astro}'],
+  },
+
   // Astro
   ...astro.configs['flat/recommended'],
-  ...astro.configs['flat/jsx-a11y-recommended'],
 );
