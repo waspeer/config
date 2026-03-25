@@ -6,4 +6,4 @@ export const configs: {
   react: Linter.Config[];
 };
 
-export function prefixFiles(configs: Linter.Config[], suffix: string): Linter.Config[];
+export function prefixFiles(configs: Linter.Config[], prefix: string): Linter.Config[];

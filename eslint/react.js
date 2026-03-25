@@ -1,4 +1,3 @@
-import { fixupPluginRules } from '@eslint/compat';
 import react from '@eslint-react/eslint-plugin';
 import prettier from 'eslint-config-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -9,7 +8,7 @@ export const reactConfig = ts.config(prettier, {
   ...react.configs.recommended,
   plugins: {
     ...react.configs.recommended.plugins,
-    'react-hooks': fixupPluginRules(reactHooks),
+    'react-hooks': reactHooks,
   },
   rules: {
     ...react.configs.recommended.rules,
