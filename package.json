@@ -1,6 +1,6 @@
 {
   "name": "@waspeer/config",
-  "version": "2.4.5",
+  "version": "3.0.0",
   "description": "Shared config for my projects",
   "license": "MIT",
   "author": "Wannes Salomé <mail@wannessalome.nl>",
